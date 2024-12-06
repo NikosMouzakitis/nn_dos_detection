@@ -7,7 +7,8 @@ if [ ! -f DOS_IDS.txt ]; then
 fi
 
 # Load CAN IDs from the file
-can_ids=$(cat DOS_IDS.txt)
+#can_ids=$(cat DOS_IDS.txt)
+can_ids=$(cat dos_idx.txt)
 counter=0
 # Loop to send traffic
 for can_id in $can_ids; do
@@ -27,6 +28,6 @@ for can_id in $can_ids; do
   cansend vcan0 "$can_id#$data"
 
   # Sleep for a short interval to control the frequency of messages
-#  sleep 0.1
+  sleep 0.05
 done
 
