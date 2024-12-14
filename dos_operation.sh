@@ -28,6 +28,6 @@ for can_id in $can_ids; do
   cansend vcan0 "$can_id#$data"
 
   # Sleep for a short interval to control the frequency of messages
-  sleep 0.05
+  sleep 0.2
 done
 
